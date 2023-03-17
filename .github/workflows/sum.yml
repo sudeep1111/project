@@ -1,0 +1,18 @@
+name: Add Two Numbers
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Add Numbers
+      run: |
+        num1=5
+        num2=10
+        sum=$(expr $num1 + $num2)
+        echo "The sum of $num1 and $num2 is $sum"
